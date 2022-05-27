@@ -14,7 +14,7 @@ class Application extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { stc: VIDEOS.fast };
+    this.state = { src: VIDEOS.fast };
   }
 
   render() {
@@ -22,7 +22,7 @@ class Application extends React.Component {
       <div>
         <h1>Video Player</h1>
         <Menu />
-        <Video />
+        <Video src={this.state.src}/>
       </div>
     )
   }
