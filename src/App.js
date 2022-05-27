@@ -1,5 +1,5 @@
 import './App.css';
-
+import React from 'react';
 import { Video } from './Video';
 import { Menu } from './Menu';
 
@@ -10,12 +10,28 @@ const VIDEOS = {
   eek: 'https://content.codecademy.com/courses/React/react_video-eek.mp4'
 };
 
+class Application extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = { stc: VIDEOS.fast };
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>Video Player</h1>
+        <Menu />
+        <Video />
+      </div>
+    )
+  }
+}
+
 function App() {
   return (
     <div className="App">
-      <h1>Video Player</h1>
-      <Menu />
-      <Video />
+      <Application />
     </div>
   );
 }
